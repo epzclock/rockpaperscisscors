@@ -1,62 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <meta charset="utf-8" />
-  <script>
-    var winConditions = {
-      rock: "scissors",
-      paper: "rock",
-      scissors: "paper"
-    };
+  <header>
+    <title>Rock Paper Scissors</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </header>
+  <body>
+    <div id="container">
+      <div class="choices">
+        <button class="rps" value="rock">Rock</button>
+        <button class="rps" value="paper">Paper</button>
+        <button class="rps" value="scissors">Scissors</button>
+      </div>
+      <div class="results">
+        <h3 id="Player">Player Score: 0</h3>
+        <h3 id="Computer">Computer Score: 0</h3>
+        <h3 id="Tie">Tie: 0</h3>
+      </div>
+      <div id="reset">
+        <button id="reset-button">Reset Game!</button>
+      </div>
+    </div>
+  </body>
 
-    function computerPlay() {
-      let choices = ["rock", "paper", "scissors"];
-      let random = Math.floor(Math.random() * choices.length);
-      return choices[random];
-    }
-
-    function playRound(playerSelection, computerSelection) {
-      let result;
-      if (playerSelection === computerSelection) {
-        result = 0;
-      } else if (winConditions[playerSelection] === computerSelection) {
-        result = 1;
-      } else {
-        result = -1;
-      }
-
-      return result;
-    }
-
-    function game() {
-      let playerScore = 0;
-      let computerScore = 0;
-      for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Enter your hand!:").toLowerCase();
-        let computerSelection = computerPlay();
-        alert(
-          `Player hand: ${playerSelection} vs. Computer hand: ${computerSelection}`
-        );
-        let resolution = playRound(playerSelection, computerSelection);
-        if (resolution === 1) {
-          playerScore += 1;
-          alert("You won this round!");
-        } else if (resolution === 0) {
-          alert("You tied this round!");
-          continue;
-        } else {
-          computerScore += 1;
-          alert("You lost this round!");
-        }
-        alert(`Your score: ${playerScore}, Computer score: ${computerScore}`);
-      }
-
-      return playerScore === computerScore
-        ? alert("Tied the game")
-        : playerScore > computerScore
-        ? alert("You win the game!")
-        : alert("You lose the game!");
-    }
-
-    console.log(game());
-  </script>
+  <script src="rockpaper.js"></script>
 </html>

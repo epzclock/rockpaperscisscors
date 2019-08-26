@@ -1,0 +1,54 @@
+button {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 25%;
+  border: 2px solid gray;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100px;
+  float: left;
+}
+
+button:hover {
+  background-color: red;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.choices {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+html {
+  background: url("https://vignette.wikia.nocookie.net/epic-seven/images/5/50/Wiki-background/revision/latest?cb=20181019045235")
+      no-repeat,
+    center, center, fixed;
+  background-size: cover;
+}
+
+.results {
+  margin: auto;
+  width: 100px;
+  padding: 200px;
+  text-align: center;
+}
+
+#Player {
+  color: burlywood;
+}
+
+#Computer {
+  color: antiquewhite;
+}
+
+#reset {
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
